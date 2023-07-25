@@ -2,7 +2,6 @@
 '''
 Pascal triangle function
 '''
-from math import factorial
 
 
 def pascal_triangle(n):
@@ -12,17 +11,16 @@ def pascal_triangle(n):
     if n <= 0:
         return []
 
-    else:
-        for i in range(n):
-            for j in range(n-i+1):
+    triangle = [[1]]
 
-                # creates left spacing
-                print(end=" ")
+    for i in range(n - 1):
+        temp = [0] + triangle[-1] + [0]
 
-            for j in range(i+1):
+        row = []
 
-                # nCr = n!/((n-r)!*r!) formula of pascal triangle
-                print(factorial(i)//(factorial(j)*factorial(i-j)), end=" ")
+        for j in range(len(triangle[-1]) + 1):
+            row.append(temp[j] + temp[j + 1])
 
-            # new line
-            print()
+        triangle.append(row)
+
+    return triangle
