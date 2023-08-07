@@ -16,9 +16,9 @@ def minOperations(n):
     '''
     if not isinstance(n, int):
         return 0
-    operations = 0 # Tracks number of operations
-    clipboard = 0  # Stores current number of characters
-    characters = 1 # Initial character H
+    operations = 0  # Tracks number of operations
+    clipboard = 0   # Stores current number of characters
+    characters = 1  # Initial character H
 
     while characters < n:
         if clipboard == 0:
